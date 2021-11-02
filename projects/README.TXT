@@ -1,0 +1,1 @@
+Microsoft Developer project folders will be created in this location by default.

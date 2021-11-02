@@ -1,0 +1,550 @@
+#include <olectl.h>
+#include "exdispid.h"
+//+-------------------------------------------------------------------------
+//
+//  Microsoft Windows
+//  Copyright 1995 - 1996 Microsoft Corporation. All Rights Reserved.
+//
+//--------------------------------------------------------------------------
+#define OLE_COLOR long
+//=--------------------------------------------------------------------------=
+// the libid for this type libray
+//
+[
+    uuid(EAB22AC0-30C1-11CF-A7EB-0000C05BAE0B),
+    helpstring("Microsoft Internet and Shell Controls"), // VB has a maximum limit for this helpstring!
+    lcid(0x0000),
+    version(1.0)
+]
+library SHDocVw {
+
+    // standard imports
+    //
+    importlib(STDOLE_TLB);
+
+    //
+    //
+    //
+
+    // primary dispatch interface for CShellExplorer control
+    //
+    [
+        uuid(EAB22AC1-30C1-11CF-A7EB-0000C05BAE0B),
+        helpstring("Web Browser Control"),
+        hidden,
+        dual,
+        odl
+    ]
+    interface IWebBrowser : IDispatch {
+
+        // properties
+        //
+        [id(0), propget, helpstring("Returns the friendly name of the Location")]
+            HRESULT Value([out, retval] BSTR *pbstrLocation);
+        [id(DISPID_LOCATION), propget, helpstring("Returns/sets location in namespace to view")]
+            HRESULT Location([out, retval] BSTR *pbstrLocation);
+        [id(DISPID_LOCATION), propput]
+            HRESULT Location([in] BSTR bstrLocation);
+
+        [id(DISPID_BACKCOLOR), propget, helpstring("Returns/sets background color")]
+            HRESULT BackColor([out, retval] OLE_COLOR *pclrBack);
+        [id(DISPID_BACKCOLOR), propput]
+            HRESULT BackColor([in] OLE_COLOR pclrBack);
+
+        [id(DISPID_FORECOLOR), propget, helpstring("Returns/sets foreground color")]
+            HRESULT ForeColor([out, retval] OLE_COLOR *pclrFore);
+        [id(DISPID_FORECOLOR), propput]
+            HRESULT ForeColor([in] OLE_COLOR pclrFore);
+
+        [id(DISPID_AUTOSIZE), propget, helpstring("Returns/sets auto-size mode")]
+            HRESULT AutoSize([out, retval] long *plAutoSize);
+        [id(DISPID_AUTOSIZE), propput]
+            HRESULT AutoSize([in] long lAutoSize);
+
+        [id(DISPID_AUTOSIZEPERCENTAGE), propget, helpstring("Returns/sets auto-size percent")]
+            HRESULT AutoSizePercentage([out, retval] long *plAutoSizePercentage);
+        [id(DISPID_AUTOSIZEPERCENTAGE), propput]
+            HRESULT AutoSizePercentage([in] long  lAutoSizePercentage);
+
+        [propget, helpstring("Returns/sets inclusion filespec")]
+            HRESULT IncludeFiles([out, retval] BSTR *pbstrIncludeFiles);
+        [propput]
+            HRESULT IncludeFiles([in] BSTR bstrIncludeFiles);
+        [propget, helpstring("Returns/sets exclusion filespec")]
+            HRESULT ExcludeFiles([out, retval] BSTR *pbstrExcludeFiles);
+        [propput]
+            HRESULT ExcludeFiles([in] BSTR bstrExcludeFiles);
+
+        // methods
+        //
+        [id(DISPID_BROWSE), helpstring("Browse for a new folder to view")]
+            HRESULT Browse(void);
+
+        [id(DISPID_REFRESH), helpstring("Refresh view")]
+            HRESULT Refresh([in, optional] VARIANT * Level);
+
+        // IInternetExplorer methods
+        //
+        [helpstring("Navigates to the previous item in the history list."), helpcontext(0x0000)]
+	    HRESULT GoBack();
+        [helpstring("Navigates to the next item in the history list."), helpcontext(0x0000)]
+            HRESULT GoForward();
+        [helpstring("Go home/start page."), helpcontext(0x0000)]
+            HRESULT GoHome();
+        [helpstring("Go Search Page."), helpcontext(0x0000)]
+            HRESULT GoSearch();
+
+        [helpstring("Navigates to a hyperlink."), helpcontext(0x0000)]
+		HRESULT Navigate([in] BSTR URL,
+            [in, optional] VARIANT * Flags,
+            [in, optional] VARIANT * TargetFrameName,
+            [in, optional] VARIANT * PostData,
+            [in, optional] VARIANT * Headers,
+            [in, optional] VARIANT * Referrer);
+
+        [helpstring("Exits Web Browser and closes the open window."), helpcontext(0x0000)]
+            HRESULT Quit();
+
+        [helpstring("Stops opening a file."), helpcontext(0x0000)]
+            HRESULT Stop();
+
+        [helpstring("Sets the default directory for an operation."), helpcontext(0x0000)]
+            HRESULT SetDefaultDirectory([in] long WhichDirectory, [in] BSTR Path);
+
+        //
+        // IInternetExplorer Properties
+        //
+        [propget, helpstring("Returns a pointer to this OC."), helpcontext(0x0000)]
+            HRESULT Application([out,retval] IDispatch** ppDisp);
+        [propget, helpstring("Returns a pointer to the container."), helpcontext(0x0000)]
+            HRESULT Container([out,retval] IDispatch** ppDisp);
+
+        [propget, helpstring("Returns the active Document."), helpcontext(0x0000)]
+            HRESULT Document([out,retval] IDispatch** ppDisp);
+
+        [propget, helpstring("Returns the file name (sans path) of <what?>."), helpcontext(0x0000)]
+            HRESULT FileName([out,retval] BSTR* pbstrFileName);
+
+        [propget, helpstring("Returns the full pathname to <what?>."), helpcontext(0x0000)]
+            HRESULT FullName([out,retval] BSTR* pbstrFullName);
+
+        [propget, helpstring("Determines whether this control is full screen or not."), helpcontext(0x0000)]
+            HRESULT FullScreen([out, retval] boolean* pBool);
+        [propput, helpstring("Sets this control to be full screen or not."), helpcontext(0x0000)]
+            HRESULT FullScreen([in] boolean Value);
+
+//      [id(0), propget, helpstring("Returns name of the application."), helpcontext(0x0000)]
+//          HRESULT Name([out,retval] BSTR* pbstrName);
+
+        [propget, helpstring("Returns a pointer to the parent Object."), helpcontext(0x0000)]
+            HRESULT Parent([out,retval] IDispatch** ppDisp);
+
+        [propget, helpstring("Returns the full pathname to the IExplorer(BUGBUG) executable."), helpcontext(0x0000)]
+            HRESULT Path([out,retval] BSTR* pbstrPath);
+
+        [propget, helpstring("Huh? -- always FALSE for an OC..."), helpcontext(0x0000)]
+            HRESULT TopLevelContainer([out, retval] boolean* pBool);
+
+        [propget, helpstring("Returns the type of the contained object."), helpcontext(0x0000)]
+            HRESULT Type([out,retval] BSTR* pbstrType);
+
+        [propget, helpstring("Determines whether this OC is visible or hidden."), helpcontext(0x0000)]
+            HRESULT Visible([out, retval] boolean* pBool);
+        [propput]
+            HRESULT Visible([in] boolean Value);
+
+        // IInternetExplorer Window stuff...
+        [propget, helpstring("The horizontal position (pixels) of the frame window relative to the screen"), helpcontext(0x0000)]
+            HRESULT Left([out, retval] long *pl);
+        [propput]
+            HRESULT Left([in] long Left);
+        [propget, helpstring("The vertical position (pixels) of the frame window relative to the screen"), helpcontext(0x0000)]
+            HRESULT Top([out, retval] long *pl);
+        [propput]
+            HRESULT Top([in] long Top);
+        [propget, helpstring("The horizontal dimension (pixels) of the frame window"), helpcontext(0x0000)]
+            HRESULT Width([out, retval] long *pl);
+        [propput]
+            HRESULT Width([in] long Width);
+        [propget, helpstring("The vertical dimension (pixels) of the frame window"), helpcontext(0x0000)]
+            HRESULT Height([out, retval] long *pl);
+        [propput]
+            HRESULT Height([in] long Height);
+
+// Added a property to see if the viewer is currenly busy or not...
+	[propget, helpstring("Query to see if something is still in progress."), helpcontext(0x0000)]
+            HRESULT Busy([out,retval] boolean *pBool);
+    };
+
+    // event interface for IWebBrowser controls ...
+    //
+    [
+        uuid(EAB22AC2-30C1-11CF-A7EB-0000C05BAE0B),
+        helpstring("Event interface for Web Browser Control"),
+        hidden
+    ]
+    dispinterface DWebBrowserEvents {
+        properties:
+        methods:
+	[id(DISPID_ON_NAVIGATEBEGIN), helpstring("Fired when a new hyperlink is being navigated to."), helpcontext(0x0000)]
+		void OnBeginNavigate([in] BSTR URL, long Flags, BSTR TargetFrameName, VARIANT * PostData, BSTR Headers, BSTR Referrer, [in, out]boolean * Cancel);
+	[id(DISPID_ON_NAVIGATE), helpstring("Fired when a new hyperlink is being navigated to."), helpcontext(0x0000)]
+		void OnNavigate([in] BSTR URL, long Flags, BSTR TargetFrameName, VARIANT * PostData, BSTR Headers, BSTR Referrer);
+    [id(DISPID_ON_STATUSTEXTCHANGE), helpstring("Statusbar text changed."), helpcontext(0x0000)]
+		void OnStatusTextChange([in]BSTR bstrText);
+    [id(DISPID_ON_PROGRESS), helpstring("Fired when download progress is updated."), helpcontext(0x0000)]
+        void OnProgress([in] long Progress, [in] long ProgressMax);
+	[id(DISPID_ON_DOWNLOADCOMPLETE), helpstring("Download of page complete."), helpcontext(0x0000)]
+		void OnDownloadComplete();
+    [id(DISPID_ON_COMMANDSTATECHANGE), helpstring("The enabled state of a command changed"), helpcontext(0x0000)]
+        void OnCommandStateChange([in] int Command, [in] boolean Enable);
+    [id(DISPID_ON_DOWNLOADBEGIN), helpstring("Download of a page started."), helpcontext(0x000)]
+        void OnDownloadBegin();
+	[id(DISPID_ON_NEWWINDOW), helpstring("Fired when a new window should be created."), helpcontext(0x0000)]
+		void OnNewWindow([in] BSTR URL, [in] long Flags, [in] BSTR TargetFrameName, [in] VARIANT * PostData, [in] BSTR Headers, [in] BSTR Referrer, [in,out] BOOLEAN * Processed);
+#if 0
+	[id(0xfffffda0), helpstring("Fired when an error occurs."), helpcontext(0x0000)]
+		void OnError([in] long Number,
+                                [in,out] BSTR* Description,
+                                [in]BSTR Source,
+                                [in]BSTR HelpFile,
+                                [in] long HelpContext,
+                                [in, out] boolean* CancelDisplay);
+#endif
+
+	[id(DISPID_ON_QUIT),helpstring("Fired when application is quiting."), helpcontext(0x0000)]
+		void OnQuit([in, out] boolean * Cancel);
+    };
+
+    // coclass for IWebBrowser controls
+    //
+    [
+        uuid(EAB22AC3-30C1-11CF-A7EB-0000C05BAE0B),
+        helpstring("WebBrowser Control")
+    ]
+    coclass WebBrowser {
+        [default]         interface IWebBrowser;
+        [default, source] dispinterface DWebBrowserEvents;
+    };
+
+
+    //
+    //
+    //
+
+    // primary dispatch interface for CSHItemOC control
+    //
+    [
+        uuid(EAB22AC4-30C1-11CF-A7EB-0000C05BAE0B),
+        helpstring("Shell Item Control"),
+        hidden,
+        dual,
+        odl
+    ]
+    interface ISHItemOC : IDispatch {
+
+        // properties
+        //
+        [id(0), propget, helpstring("Returns the friendly name of the Location")]
+            HRESULT Value([out, retval] BSTR *pbstrLocation);
+        [id(DISPID_LOCATION), propget, helpstring("Location of object to view")]
+            HRESULT Location([out, retval] BSTR *pbstrLocation);
+        [id(DISPID_LOCATION), propput]
+            HRESULT Location([in] BSTR bstrLocation);
+
+        // methods
+        //
+        [id(DISPID_BROWSE), helpstring("Select a new item to view")]
+            HRESULT Browse(void);
+    };
+
+    // event interface for CSHItemOC controls ...
+    //
+    [
+        uuid(EAB22AC5-30C1-11CF-A7EB-0000C05BAE0B),
+        helpstring("Event interface for Shell Item Control"),
+        hidden
+    ]
+    dispinterface DSHItemOCEvents {
+        properties:
+        methods:
+    };
+
+    // coclass for CSHItemOC controls
+    //
+    [
+        uuid(EAB22AC6-30C1-11CF-A7EB-0000C05BAE0B),
+        helpstring("Shell Item Control")
+    ]
+    coclass SHItemOC {
+        [default]         interface ISHItemOC;
+        [default, source] dispinterface DSHItemOCEvents;
+    };
+
+
+// IID_DIExplorer: {0002DF05-0000-0000-C000-000000000046}
+	[
+		uuid(0002DF05-0000-0000-C000-000000000046),
+		helpstring("Internet Explorer Frame Object."),
+		helpcontext(0x0000),
+		hidden,
+		oleautomation,
+		dual
+	]
+	interface IInternetExplorer : IDispatch
+	{
+            //
+            // Methods
+            //
+	    [helpstring("Navigates to the previous item in the history list."), helpcontext(0x0000)]
+		HRESULT GoBack();
+	    [helpstring("Navigates to the next item in the history list."), helpcontext(0x0000)]
+		HRESULT GoForward();
+	    [helpstring("Go home/start page."), helpcontext(0x0000)]
+		HRESULT GoHome();
+        [helpstring("Go Search Page."), helpcontext(0x0000)]
+        HRESULT GoSearch();
+
+        [helpstring("Navigates to a hyperlink."), helpcontext(0x0000)]
+		HRESULT Navigate([in] BSTR URL,
+            [in, optional] VARIANT * Flags,
+            [in, optional] VARIANT * TargetFrameName,
+            [in, optional] VARIANT * PostData,
+            [in, optional] VARIANT * Headers,
+            [in, optional] VARIANT * Referrer);
+
+	    [helpstring("Exits IExplorer and closes the open document."), helpcontext(0x0000)]
+		HRESULT Quit();
+
+        [helpstring("Refreshes the current file."), helpcontext(0x0000)]
+            HRESULT Refresh([in,optional] VARIANT * Level);
+
+	    [helpstring("Stops opening a file."), helpcontext(0x0000)]
+	        HRESULT Stop();
+
+        [helpstring("Sets the default directory for an operation."), helpcontext(0x0000)]
+            HRESULT SetDefaultDirectory([in] long WhichDirectory, [in] BSTR Path);
+
+        //
+        // Properties
+        //
+        [propget, helpstring("Returns a pointer to the IExplorer Object."), helpcontext(0x0000)]
+            HRESULT Application([out,retval] IDispatch** ppDisp);
+	    [propget, helpstring("Returns a pointer to the containing document if any."), helpcontext(0x0000)]
+	        HRESULT Container([out,retval] IDispatch** ppDisp);
+
+	    [propget, helpstring("Returns the active Document."), helpcontext(0x0000)]
+	        HRESULT Document([out,retval] IDispatch** ppDisp);
+
+	    [propget, helpstring("Returns the full pathname to the IExplorer executable."), helpcontext(0x0000)]
+	        HRESULT FileName([out,retval] BSTR* pbstrFileName);
+
+	    [propget, helpstring("Returns the full pathname to the IExplorer executable."), helpcontext(0x0000)]
+		HRESULT FullName([out,retval] BSTR* pbstrFullName);
+
+	    [propget, helpstring("Determines whether IExplorer is full screen or not."), helpcontext(0x0000)]
+	        HRESULT FullScreen([out, retval] boolean* pBool);
+            [propput, helpstring("Sets the IExplorer to be full screen or not."), helpcontext(0x0000)]
+	        HRESULT FullScreen([in] boolean Value);
+
+	    [propget, helpstring("Turn on or off the statusbar."), helpcontext(0x0000)]
+	        HRESULT StatusBar([out, retval] boolean* pBool);
+            [propput, helpstring("Turn on or off the statusbar."), helpcontext(0x0000)]
+	        HRESULT StatusBar([in] boolean Value);
+
+	    [propget, helpstring("Text of Status window."), helpcontext(0x0000)]
+	        HRESULT StatusText([out, retval] BSTR *pbstr);
+
+            [propput, helpstring("Text of Status window."), helpcontext(0x0000)]
+	        HRESULT StatusText([in] BSTR bstr);
+
+	    [propget, helpstring("Controls which toolbar is shown."), helpcontext(0x0000)]
+	        HRESULT ToolBar([out, retval] int * pBool);
+            [propput, helpstring("Controls which toolbar is shown."), helpcontext(0x0000)]
+	        HRESULT ToolBar([in] int Value);
+
+
+	    [id(0), propget, helpstring("Returns name of the application."), helpcontext(0x0000)]
+		HRESULT Name([out,retval] BSTR* pbstrName);
+
+	    [propget, helpstring("Returns a pointer to the IExplorer Object."), helpcontext(0x0000)]
+		HRESULT Parent([out,retval] IDispatch** ppDisp);
+
+            [propget, helpstring("Returns the full pathname to the IExplorer executable."), helpcontext(0x0000)]
+                HRESULT Path([out,retval] BSTR* pbstrPath);
+
+            [propget, helpstring("Returns True if this is the top level object."), helpcontext(0x0000)]
+                HRESULT TopLevelContainer([out, retval] boolean* pBool);
+
+            [propget, helpstring("Returns the type of the contained object."), helpcontext(0x0000)]
+                    HRESULT Type([out,retval] BSTR* pbstrType);
+
+	    [propget, helpstring("Determines whether IExplorer is visible or hidden."), helpcontext(0x0000)]
+	        HRESULT Visible([out, retval] boolean* pBool);
+	    [propput, helpstring("Determines whether IExplorer is visible or hidden."), helpcontext(0x0000)]
+	        HRESULT Visible([in] boolean Value);
+
+        // Window stuff...
+        [propget, helpstring("The horizontal position (pixels) of the frame window relative to the screen"), helpcontext(0x0000)]
+                HRESULT Left([out, retval] long *pl);
+        [propput]
+                HRESULT Left([in] long Left);
+        [propget, helpstring("The vertical position (pixels) of the frame window relative to the screen"), helpcontext(0x0000)]
+                HRESULT Top([out, retval] long *pl);
+        [propput]
+                HRESULT Top([in] long Top);
+        [propget, helpstring("The horizontal dimension (pixels) of the frame window"), helpcontext(0x0000)]
+                HRESULT Width([out, retval] long *pl);
+        [propput]
+                HRESULT Width([in] long Width);
+        [propget, helpstring("The vertical dimension (pixels) of the frame window"), helpcontext(0x0000)]
+                HRESULT Height([out, retval] long *pl);
+        [propput]
+                HRESULT Height([in] long Height);
+
+// Added a property to see if the viewer is currenly busy or not...
+	[propget, helpstring("Query to see if something is still in progress."), helpcontext(0x0000)]
+		HRESULT Busy([out,retval] boolean *pBool);
+	};
+
+    // event interface for the Explorer Frame
+    //
+    [
+       	uuid(0002DF06-0000-0000-C000-000000000046),
+        helpstring("Event interface for IExplorer Frame"),
+    ]
+    dispinterface DInternetExplorerEvents {
+        properties:
+        methods:
+	[id(DISPID_ON_NAVIGATEBEGIN), helpstring("Fired when a new hyperlink is being navigated to."), helpcontext(0x0000)]
+		void OnBeginNavigate([in] BSTR URL, long Flags, BSTR TargetFrameName, VARIANT * PostData, BSTR Headers, BSTR Referrer, [in, out]boolean * Cancel);
+	[id(DISPID_ON_NAVIGATE), helpstring("Fired when a new hyperlink is being navigated to."), helpcontext(0x0000)]
+		void OnNavigate([in] BSTR URL, long Flags, BSTR TargetFrameName, VARIANT * PostData, BSTR Headers, BSTR Referrer);
+    [id(DISPID_ON_STATUSTEXTCHANGE), helpstring("Statusbar text changed."), helpcontext(0x0000)]
+		void OnStatusTextChange([in]BSTR bstrText);
+    [id(DISPID_ON_PROGRESS), helpstring("Fired when download progress is updated."), helpcontext(0x0000)]
+        void OnProgress([in] long Progress, [in] long ProgressMax);
+	[id(DISPID_ON_DOWNLOADCOMPLETE), helpstring("Download of page complete."), helpcontext(0x0000)]
+		void OnDownloadComplete();
+    [id(DISPID_ON_COMMANDSTATECHANGE), helpstring("The enabled state of a command changed"), helpcontext(0x0000)]
+        void OnCommandStateChange([in] int Command, [in] boolean Enable);
+    [id(DISPID_ON_DOWNLOADBEGIN), helpstring("Download of a page started."), helpcontext(0x000)]
+        void OnDownloadBegin();
+	[id(DISPID_ON_NEWWINDOW), helpstring("Fired when a new window should be created."), helpcontext(0x0000)]
+		void OnNewWindow([in] BSTR URL, [in] long Flags, [in] BSTR TargetFrameName, [in] VARIANT * PostData, [in] BSTR Headers, [in] BSTR Referrer, [in,out] BOOLEAN * pbProcessed);
+#if 0
+	[id(0xfffffda0), helpstring("Fired when an error occurs."), helpcontext(0x0000)]
+		void OnError([in] long Number,
+                                [in,out] BSTR* Description,
+                                [in]BSTR Source,
+                                [in]BSTR HelpFile,
+                                [in] long HelpContext,
+                                [in, out] boolean* CancelDisplay);
+#endif
+
+	[id(DISPID_ON_QUIT), helpstring("Fired when application is quiting."), helpcontext(0x0000)]
+		void OnQuit([in, out] boolean * Cancel);
+    };
+
+        //CLSID_InternetExplorer
+        [
+    		uuid(0002DF01-0000-0000-C000-000000000046),
+    		helpstring("Internet Explorer Application Object."),
+        ]
+        coclass InternetExplorer
+        {
+        [default] interface       IInternetExplorer;
+        [default, source] dispinterface DInternetExplorerEvents;
+        }
+
+ 	typedef
+    	[
+		uuid(0002DF08-0000-0000-C000-000000000046),
+		helpstring("Constants for DInternetHistory")
+	]
+	enum HlinkIDConstants	{
+		[helpstring("Previous Item")] 	hlidPrevious = 0,
+		[helpstring("Next Item")] 		hlidNext = 0xFFFFFFFF,
+		[helpstring("Current Item")] 	hlidCurrent = 0xFFFFFFFE,
+		[helpstring("Last Item")] 		hlidStackBottom = 0xFFFFFFFD,
+		[helpstring("First Item")] 		hlidStackTop = 0xFFFFFFFC
+	} HlinkIDConstants;
+
+
+    typedef
+    [
+        uuid(14EE5380-A378-11cf-A731-00A0C9082637),
+        helpstring("Constants for WebBrowser navigation flags")
+    ]
+    enum BrowserNavConstants	{
+        [helpstring("Open in new window")] 	navOpenInNewWindow = 0x0001,
+        [helpstring("Exclude from history list")] 	navNoHistory = 0x0002,
+        [helpstring("Don't read from cache")] 	navNoReadFromCache = 0x0004,
+        [helpstring("Don't write from cache")] 	navNoWriteToCache = 0x0008,
+    } BrowserNavConstants;
+
+    typedef
+    [
+        uuid(C317C260-A991-11cf-A731-00A0C9082637),
+        helpstring("Constants for SetDefaultDirectory")
+    ]
+    enum SetDefDirConstants	{
+        [helpstring("Set default SaveAs directory")] 	defdirSaveAs = 0x0001,
+    } SetDefDirConstants;
+
+    typedef
+    [
+        uuid(C317C261-A991-11cf-A731-00A0C9082637),
+        helpstring("Constants for Refresh")
+    ]
+    enum RefreshConstants	{
+        [helpstring("Refresh entirely")] 	refreshAll = 0x0000,
+        [helpstring("Don't send pragma:nocache")] 	refreshDontSendNoCache = 0x0001,
+    } RefreshConstants;
+
+
+// IID_IHTMLDocument: {626FC520-A41E-11cf-A731-00A0C9082637}
+
+    [
+        uuid(626FC520-A41E-11cf-A731-00A0C9082637),
+        helpstring("HTML Document Object Automation."),
+        helpcontext(0x0000),
+        hidden,
+        oleautomation,
+        dual
+    ]
+    interface IHTMLDocument : IDispatch
+    {
+            //
+            // Methods
+            //
+        [propget, helpstring("Returns the title of the document."), helpcontext(0x0000)]
+        HRESULT Title([out,retval] BSTR * pTitle);
+
+    };
+
+    // event interface for HTML document 
+    //
+    [
+       	uuid(626FC521-A41E-11cf-A731-00A0C9082637),
+        helpstring("Event interface for HTML document"),
+    ]
+    dispinterface DHTMLDocEvents {
+        properties:
+        methods:
+        [id(DISPID_ON_TITLECHANGE), helpstring("The title of the document has changed."), helpcontext(0x000)]
+                void OnTitleChange([in] BSTR Title, [in] boolean IsFinalTitle);
+    };
+
+    [
+        uuid(626FC522-A41E-11cf-A731-00A0C9082637),
+        helpstring("HTML document automation object"),
+    ]
+    coclass HTMLDocument
+    {
+        [default] interface       IHTMLDocument;
+        [default, source] dispinterface DHTMLDocEvents;
+    }
+
+};
+

@@ -1,0 +1,56 @@
+; Microsoft Visual C++
+; Tip of the Day
+; Copyright© 1995 Microsoft Corp. All rights reserved.
+;Visual C++ 4.0 (VCXX.TIP)
+; -- Categories --
+vcx=The Visual C++ Product
+cxx=C++
+mfc=Microsoft Foundation Class Programming
+wiz=Wizards
+prg=General Programming
+xdv=Cross-Platform Development
+; -- Tips --
+#priority 80
+vcx,Welcome to the Microsoft Developer Studio, featuring Visual C++.\n\nWe've got a lot of great tips for getting the most out of Developer Studio and Visual C++, so leave Tip of the Day turned on for a while. If you turn Tip of the Day off, it is available from the Help menu.
+#priority -
+cxx,You can get a more detailed explanation for any build error. Click on the message number and press F1.
+cxx,The source code for the standard run-time library is provided with Visual C++, so you can step into run-time functions just like you would any other code.
+cxx,The compiler options /Yc and /Yu (Create and Use specific precompiled header) provide the most efficient precompiled header management.
+cxx,You should define an assignment operator if you define a copy constructor.
+xdv,You can easily port your MFC application to the Macintosh with the VC++ Cross-Development Edition.
+cxx,You can use the C++ typeid operator to obtain type information at run time.
+wiz,You can customize AppWizard to create projects most useful to you. Create a new "Custom AppWizard" project to get started.
+cxx,The compiler detects the use of uninitialized data only in optimized builds (/Og). So it's a good idea to do a release build occasionally.
+cxx,You must initialize references and non-static const members in the member-initialization list of the constructor.
+cxx,Memory allocated with the C++ operator new[] must be freed with operator delete[].
+cxx,With C++ run-time type information, you can perform safe typecasts and manipulate type information at run time.
+wiz,You can press {ClassWizard} to display ClassWizard.
+mfc,You can add Tool Tips to your application's buttons. Append "\\n" and the Tool Tip text to the corresponding menu item's Prompt string.
+cxx,You can use C++ exception handling to handle unusual cases in your program.
+cxx,You can use C++ templates to write generic classes and functions for arbitrary types.
+cxx,You should initialize all members in a constructor.
+cxx,To avoid build errors when upgrading from one version of the compiler to another, make sure you delete your old PDB and PCH files.
+cxx,The new debug version of the C/C++ run-time library can help you find heap corruption problems in your program.
+hlp,To get a listing of the MFC classes with data members, type in Data Members as a keyword in the Index tab on the InfoViewer Search dialog box.
+wiz,You can use Component Gallery to add features to your application.
+cxx,If you allocate memory in a base class, you should make the destructor virtual.
+hlp, To see a list of samples associated with a particular class in the MFC Class Library Reference, click the See Also button for any class overview topic in Books Online. Sample programs that apply to the class are listed in the See Also drop-down. To jump to a class overview topic, choose the class overview jump from the See Also drop-down for any member function or data member topic. 
+cxx,You can use the C++ dynamic_cast operator for safe polymorphic run-time casts.
+cxx,You can enable floating-point exceptions with the _controlfp function.
+hlp,To access the Class Members topic for any MFC class, type in Class Members as a keyword in the Index tab on the Search dialog box. Then scroll down to the class you want.
+cxx,You can provide an implementation for pure virtual functions.
+cxx,Expressions using the C++ dynamic_cast and typeid operators are resolved at run-time for pointers and references to classes with virtual functions and at compile-time for all other types.
+xdv,You can improve the international portability of your code by using the generic text mappings in <TCHAR.H>.
+vcx,If you have comments about Visual C++ or suggestions for future versions, you can send e-mail to 'MSVC@MICROSOFT.COM'. 
+cxx,You can use enum to create class-specific integral constants.
+cxx,The new C++ operators dynamic_cast, static_cast, reinterpret_cast, and const_cast provide clearer typecasting than C-style typecasts.
+cxx,MFC windows are OLE control containers. To use an OLE control, install it in your project, using Component Gallery. Then you can drag the control from the dialog palette onto your dialog.
+cxx,You can avoid naming collisions by using the new C++ namespace feature.
+cxx,If your code uses the obsolete class names Type_info, Bad_cast, or Bad_typeid, you can #define __RTTI_OLDNAMES before including <TYPEINFO.H>, and these class names will be accepted.
+xdv,The latest Win32 API library and platform information is in the \\MSDEV\\LIB\\WIN32API.CSV file. This file is a comma-separated variable text file with important summary information about each Win32 API.
+vcx,You can browse the Visual C++ home page on the World Wide Web. The Visual C++ home page includes information such as documentation that missed the deadline for the latest version of Books Online. The address for the Visual C++ home page is: http://www.microsoft.com/devonly/prodinfo/vcpinfo/vcpinfo.htm
+czx,You can automatically indent and format your C/C++ code with the "Smart Indent" feature turned on. You can find this feature on the Tabs tab in the Options dialog.
+cxx,You can change the default placement of brackets { } by changing the settings on the Tabs tab in the Options dialog.
+cxx,You can search the directory paths specified on the Directories tab in the Options dialog by activating a checkbox in the Find In Files "Advanced" settings.
+cxx,If a derived class allocates memory, use a virtual destructor.
+vcx,You can find the latest information about Visual C++ on the WorldWide Web at http://www.microsoft.com/visualc.

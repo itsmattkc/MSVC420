@@ -1,0 +1,29 @@
+:Base pss.hlp>main
+:Title Micosoft Developer Studio Technical Support
+1 Your First Stop for Visual C++ 4.2 Support
+2 General Troubleshooting Guide=VCXX41Troubleshooting
+2 Setup Troubleshooting Guide=TroubleshootingSetupProblemsUnderWindows95andWindowsNT
+2 Frequently Asked Questions=VCXX40FAQ
+2 Where to Go Next=VCXX40WhereToGoNext
+1 Your First Stop for Visual J++ Support
+2 Troubleshooting Guide=VJXXTroubleShooting
+2 Frequently Asked Questions=VJXXFAQ
+1 Your First Stop for Fortran Powerstation 4.0 Support
+2 Troubleshooting Guide=FPSTroubleshooting
+2 Frequently Asked Questions=FPSFAQ
+2 Where to Go Next=FPSWhereToGoNext
+1 Your First Stop for Visual Test Support
+2 Troubleshooting Guide=vtfaq
+2 Frequently Asked Questions=_clang_Visual_Test_Frequently_Asked_Questions
+2 Where to Go Next=VTWhereToGoNext
+1 Microsoft AnswerPoint
+1 Microsoft AnswerPoint=PSSXMicrosoftAnswerPoint
+1 Product Support Within the United States and Canada
+2 Product Support Within the United States and Canada=PSSXProductSupportWithintheUnitedStatesandCanada
+2 Information Services=PSSXInformationServices
+2 Standard Support=PSSXStandardSupport
+2 Developer Fee-Based Support=PSSXDeveloperFeeBasedSupport
+2 Text Telephone=PSSXTextTelephone
+2 Other Microsoft Services=PSSXOtherMicrosoftServices
+1 Product Support Worldwide
+2 Product Support Worldwide=PSSXProductSupportWorldwide

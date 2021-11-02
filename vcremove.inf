@@ -1,0 +1,23 @@
+[ExtraFiles]
+C:\MSDEV\vcremove.inf
+C:\MSDEV\msvc-stp.log
+C:\MSDEV\bin\vcvars32.bat
+C:\MSDEV\bin\command.log
+C:\MSDEV\VCRemove\vcsetup.inf
+C:\MSDEV\VCRemove\vcmsetup.inf
+
+[ProductKey]
+Software\Microsoft\Developer
+
+[ProductPath]
+C:\MSDEV\
+
+[IntermediateFileTypes]
+.gid;.fts;.hst;.bkm;.ano;.srs;.lst;.flt
+
+[ShortNameKey]
+MSVC40
+
+[ProgmanGroupName]
+Microsoft Visual C++ 4.0
+

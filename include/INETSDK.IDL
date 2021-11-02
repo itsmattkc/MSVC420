@@ -1,0 +1,25 @@
+//+---------------------------------------------------------------------------
+//
+//  Copyright 1995 - 1996 Microsoft Corporation. All Rights Reserved.
+//
+//  Contents:   INet SDK merged IDL
+// 
+//----------------------------------------------------------------------------
+
+cpp_quote("//+-------------------------------------------------------------------------")
+cpp_quote("//")
+cpp_quote("//  Microsoft Windows")
+cpp_quote("//  Copyright 1995 - 1996 Microsoft Corporation. All Rights Reserved.")
+cpp_quote("//")
+cpp_quote("//  File: inetsdk.h")
+cpp_quote("//")
+cpp_quote("//--------------------------------------------------------------------------")
+
+import "comcat.idl";
+import "datapath.idl";
+import "docobj.idl";
+import "hlink.idl";
+import "urlmon.idl";
+
+// Requires OLECTL.IDL
+//import "ocx96.idl";

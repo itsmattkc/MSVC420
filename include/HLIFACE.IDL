@@ -1,0 +1,24 @@
+//+---------------------------------------------------------------------------
+//
+//  Copyright 1995 - 1996 Microsoft Corporation. All Rights Reserved.
+//
+//  Contents:   OLE Hyperlinking interfaces
+// 
+//----------------------------------------------------------------------------
+
+cpp_quote("//+-------------------------------------------------------------------------")
+cpp_quote("//")
+cpp_quote("//  Microsoft Windows")
+cpp_quote("//  Copyright 1995-1996 Microsoft Corporation. All Rights Reserved.")
+cpp_quote("//")
+cpp_quote("//  File: hliface.h")
+cpp_quote("//")
+cpp_quote("//--------------------------------------------------------------------------")
+cpp_quote("")
+
+cpp_quote("#ifndef __hlink_h__														")
+cpp_quote("#include \"hlink.h\"														")
+cpp_quote("#endif // __hlink_h__														")
+
+
+

@@ -1,0 +1,64 @@
+; Tip of the Day
+; Copyright© 1995 Microsoft Corp. All rights reserved.
+; Core (MSDEV.TIP)
+; -- Categories --
+dev=Microsoft Developer
+adv=Gratuitous Advice 
+hlp=Using the Information System
+shp=Advice on Shipping Software
+; -- Tips --
+adv,For critical subsystems, you can use an alternate algorithm to validate results in debug builds.
+dev,You can add buttons to any toolbar. From the Tools menu, choose Customize. Select the Toolbars tab. Drag any button or command onto a toolbar. If you drop the button or command outside an existing toolbar, a custom toolbar is automatically created.
+hlp,You can toggle an InfoViewer Topic window title by pressing {InfoViewerToggleTopicTitle}. You can toggle the Topic window toolbar by pressing {InfoViewerToggleToolbar}.
+dev,You can hide all screen elements to see more information. From the View menu, choose Full Screen. To restore the screen, click the Full Screen button or press Esc.
+hlp,You can define an InfoViewer subset to display a smaller set of books in the InfoView pane, to narrow the scope of a query, or to narrow the scope of an F1 search in a source file. \n\nTo set the default subset for the InfoView pane, Search Query, or F1 source-file search, choose the Set Default Subsets command on the Help menu.
+dev,You can resize the drop-down edit control on a toolbar. From the Tools menu, choose Customize and select the Toolbars tab. Click the control on the toolbar to display the selection box and then drag the right edge.
+hlp,{InfoViewerJumpNext} moves to the next hotspot in the InfoViewer Topic window.
+hlp,Pressing F1 displays help for the keyword at the cursor in a source window or the Output window. \n\nThis shortcut works in an InfoViewer Topic window, too! When you select text and then press F1, InfoViewer displays help for the selected text. You can select a word by double-clicking it.
+dev,You can move a toolbar button by holding down Alt and dragging it to a new position. You can drag it to a different toolbar or remove it by dragging it off the toolbar.
+hlp,When you click a hotlink in an InfoViewer topic, you go to a related topic. To return to the previous topic, press {InfoViewerBack}.
+dev,You can get help on any dialog box or error message. Click the Help button in the dialog or message box or press F1.
+dev,Many useful commands are accessible only from toolbar buttons. To discover the available toolbar buttons, choose the Toolbar tab on the Customize dialog box. To add a toolbar button to an open toolbar, drag the toolbar button from the tab to the toolbar. Dropping the toolbar button outside an existing toolbar creates a custom toolbar. 
+hlp,When using InfoViewer, you can query for a search string in text or a search string "just in titles." Querying for a search string just in titles is a good technique to find a topic your have visited before.
+dev,To close and save multiple source files, you can choose the Windows command on the Window menu.
+hlp,You can do a subsequent query on a list of topics from a previous InfoViewer query. This is a good method to cast a wide net and then pick out the catch. From the InfoViewer Search dialog, choose the Last topics found option from the Where would you like to search? step.
+dev,You can display multiple toolbars. From the View menu, choose Toolbars and then select the toolbars you want.
+dev,You can undock a dockable window by double-clicking its border. To see a list of dockable windows, choose the Workspace tab on the Options dialog box.
+hlp,You can pin the InfoViewer Query Results window to browse and display topics. When the window is unpinned, it hides when you open a topic. Press {InfoViewerQueryResult} to display it again.
+dev,You can cycle through panes in a tabbed window by pressing Ctrl+PageUp or Ctrl+PageDown. You can cycle through tabs in a tabbed dialog by pressing Ctrl+Tab or Ctrl+Shift+Tab.
+hlp,You can choose the Keyboard command on the Help menu to see the current keyboard shortcuts. The keyboard list is updated when you make a change to a shortcut assignment. Change assignments from the Customize command on the Tools menu. 
+hlp, You can use your own WinHelp files to provide F1 help in source files. For information, see Microsoft Developer Studio Extension Help (EXTHELP.HLP) in the product \Help subdirectory.
+dev,You can display a pop-up menu by clicking the right mouse button in a window. The pop-up menu contains commands specific to the window where you clicked.
+hlp,In an InfoViewer Topic window, {InfoViewerSeeAlso} displays the See Also list. This shortcut works even if you've hidden the toolbar with {InfoViewerToggleToolbar}.
+adv,ASSERT helps you catch bugs early.
+hlp,With the new InfoViewer glossary feature, you can easily find the definition of an unfamiliar term in an information title such as Books Online. Just click a term to see its definition in a pop-up window. \n\nIf this tip were in Books Online, you could click the term "information title" to find out exactly what it is! (An information title is what InfoViewer displays.)
+dev,You can move the insertion point to the previous word by pressing {WordLeft}. To move to the next word, press {WordRight}.
+hlp,When an InfoViewer topic is active, you can enter a keyword in the Find box on the Standard toolbar to begin a query. Press Enter to query within the current topic. Press Shift+Enter to query the current information title (your last settings on the Query tab are used as defaults).
+dev,You can scroll text up one screen by pressing {PageUp}. Pressing {PageDown} scrolls text down one screen. 
+hlp,There are two default InfoViewer toolbars:  InfoViewer, which contains buttons for common operations, and InfoViewer Contents, which lists available subsets for the InfoView pane.
+dev,You can close a dialog box by pressing Esc.
+hlp,Pressing F1 on a keyword in a source file displays help for that keyword.
+dev,Pressing {EditProperties} displays properties for the selected item or window.
+hlp,You can turn off title tips in any Workspace Window pane by toggling Title Tips on the pop-up menu for the pane. 
+hlp, You can use Microsoft Development Library for F1 help in source files rather than Visual C++ Books Online. If you are a subscriber to MSDN, just open the latest version from the Open Information Title dialog box. Until you open another title, Microsoft Development Library will remain current between sessions.
+dev,When editing, you can move selected items by dragging. To copy the selection, hold down Ctrl as you drag.
+hlp, Files in online sample programs are opened up directly in Developer Studio. \n\nSee the Tutorials and Samples node in Books Online or the Samples node under Product Documentation in Microsoft Development Library for a list of samples.
+dev, {WindowDockingView} toggles a docking window's docked state.
+hlp,You can set the default size and position of the application help window. After pressing the Help button on a dialog, for instance, size and position the help window where you want it (perhaps at the bottom of the application frame). When you request help again from a dialog, window, or property page, the help window opens where you last placed it.
+dev,You can see all of the standard and custom keyboard bindings by choosing the Keyboard command on the Help menu.
+hlp,You can dock the InfoViewer Contents toolbar at the top of the Workspace window by holding down the Shift key while dragging the InfoViewer Contents toolbar into position. The InfoViewer Contents toolbar allows you to change subsets in the InfoView pane. By default, the InfoViewer Contents toolbar is docked at the top of the Workspace window.
+dev,You can press Esc or Shift+Esc to hide a window in a dockable state. When focus is either in the output or topic window, pressing Esc returns focus to an open source window, without hiding the output or topic window. Pressing Esc again hides the output or topic window.
+dev,You can learn about any command on a menu by highlighting the command and reading the text in the status bar at the bottom of the main window.
+hlp, When clicking glossary text in a Books Online topic, you see the pop-up definition for the term. Glossary text is dark gray by default.
+hlp, You can open Microsoft Development Library from within Microsoft Developer Studio.
+dev,You can quickly select a large block of text with the mouse. Click at the beginning of the text, press Shift, and then click at the end of the text.
+hlp,You can drag-and-drop text from the InfoViewer topic window to a source window.
+hlp,You can determine the scope of a full-text help query by using subsets. Create or choose a subset that includes only the books you want to search.
+dev,You can display a menu of toolbars by pointing to a toolbar and then clicking the right mouse button.
+hlp,You can change the color of the glossary pop-up text to any color. \n\nTo change the default gray color, choose the Format tab on the Options dialog and then select the InfoViewer category.
+hlp,You can dock the InfoViewer topic window. Choose Docking View from the pop-up menu to switch the topic window to a floating state and then drag the topic window to the application frame to dock it.
+dev,You can move a toolbar by clicking between the toolbar buttons and dragging. Return the toolbar to its original position by double-clicking its titlebar.
+hlp,Dock your InfoViewer toolbar to either side of the application frame for easy access.
+dev,You can drag toolbar buttons to a new position on a toolbar or to a different toolbar. Hold down Alt and drag the button. To copy buttons, press Alt+Ctrl.
+hlp,You can apply InfoViewer subsets in three areas: content displays in the InfoView pane, full-text queries in the InfoViewer Search dialog, and F1 help searches in source files. Subsets are independently applied in each area. For example, changing an InfoView pane subset does not affect F1 source-file help.
+hlp,You can determine the scope of a F1 source-file help by using subsets. Create or choose a subset that includes only the books you want to search. \n\nThis technique helps you pinpoint the reference topics most relevant to your programming task.

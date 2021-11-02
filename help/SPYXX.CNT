@@ -1,0 +1,42 @@
+:Base spyxx.hlp>main
+:Title Microsoft Spy++ Help
+:Index (no name) =Spyxx.hlp
+1 Spy++ Overview
+2 Using Spy++=_ASUG_Using_Spy.2b2b@Spyxx.hlp>main
+2 Working In Spy=_ASUG_Working_In_Spy.2b2b@Spyxx.hlp>main
+2 Starting Spy++=_ASUG_Starting_Spy.2b2b@Spyxx.hlp>main
+2 Viewing with Spy++=_ASUG_Viewing_with_Spy2b2b@Spyxx.hlp>main
+2 The Spy++ Toolbar=_ASUG_The_Spy_2b2b_Toolbar@Spyxx.hlp>main
+2 Refreshing the View=_ASUG_Refreshing_the_View@Spyxx.hlp>main
+2 Changing Fonts=_ASUG_Changing_Fonts@Spyxx.hlp>main
+2 Expanding and Collapsing Spy++ Trees=_ASUG_Expanding_and_Collapsing_Spy.2b2b_.Trees
+1 Viewing Windows
+2 The Windows View=_ASUG_The_Windows_View@Spyxx.hlp>main
+2 The Window Finder Tool=_ASUG_The_Window_Finder_Tool@Spyxx.hlp>main
+2 Searching for a Window=_ASUG_Searching_for_a_Window@Spyxx.hlp>main
+2 Opening Window Properties=_ASUG_Opening_Window_Properties@Spyxx.hlp>main
+2 Window Properties=_ASUG_Window_Properties@Spyxx.hlp>main
+1 Viewing Processes
+2 The Processes View=_ASUG_The_Processes_View@Spyxx.hlp>main
+2 Searching for a Process=_ASUG_Searching_for_a_Process@Spyxx.hlp>main
+2 Opening Process Properties;process properties, opening=_ASUG_Opening_Process_Properties@Spyxx.hlp>main
+2 Process Properties for Windows 95=_ASUG_Process_Properties_for_Windows_95@Spyxx.hlp>main
+2 Process Properties for Windows NT=_ASUG_Process_Properties_for_Windows_NT@Spyxx.hlp>main
+1 Viewing Threads
+2 The Threads View=_ASUG_The_Threads_View@Spyxx.hlp>main
+2 Searching for a Thread=_ASUG_Searching_for_a_Thread@Spyxx.hlp>main
+2 Opening Thread Properties;thread properties, opening=_ASUG_Opening_Thread_Properties@Spyxx.hlp>main
+2 Thread Properties for Windows 95=_ASUG_Thread_Properties_for_Windows_95@Spyxx.hlp>main
+2 Thread Properties for Windows NT=_ASUG_Thread_Properties_for_Windows_NT@Spyxx.hlp>main
+1 Viewing Messages
+2 The Messages View=_ASUG_The_Messages_View@Spyxx.hlp>main
+2 Controlling the Messages View=_ASUG_Controlling_the_Messages_View@Spyxx.hlp>main
+2 Starting and Stopping the Message Log Display=_ASUG_Starting_and_Stopping_the_Message_Log_Display
+2 Choosing Message Options=_ASUG_Choosing_Message_Options@Spyxx.hlp>main
+2 The Windows Tab=_ASUG_The_Windows_Tab@Spyxx.hlp>main
+2 The Messages Tab=_ASUG_The_Messages_Tab@Spyxx.hlp>main
+2 The Output Tab=_ASUG_The_Output_Tab@Spyxx.hlp>main
+2 Message Codes=_ASUG_message_codes@Spyxx.hlp>main
+2 Searching for a Message=_ASUG_Searching_for_a_Message@Spyxx.hlp>main
+2 Opening Message Properties=_ASUG_Opening_Message_Properties@Spyxx.hlp>main
+2 Message Properties=_ASUG_Message_Properties@Spyxx.hlp>main
